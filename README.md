@@ -85,3 +85,32 @@ It's a very extensive set of extension methods that allow you to more naturally
 specify the expected outcome of a TDD or BDD-style unit tests. Targets .NET
 Framework 4.5 and 4.7, as well as .NET Core 2.0, .NET Core 2.1, .NET Core 3.0,
 .NET Standard 1.3, 1.6 2.0 and 2.1.
+
+## What is needed
+Either on Rider or Visual Studio, the Specflow extension is needed for the correct
+parsing and files extension identification to work. Install it and you are ready to 
+go!
+
+## How to run it
+Simply compile the solution, if it builds, it works. Open the Unit Test section of
+your IDE and search for the OrderStepDefinition tests. Those are the ones created 
+with Specflow `.feature` files
+
+## How to create [Living Documentation](https://docs.specflow.org/projects/getting-started/en/latest/GettingStarted/Step9.html#add-living-documentation)
+- On the command prompt, run the below command to install LivingDoc CLI as a
+  global dotnet tool: 
+  
+  `dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI`
+  
+
+- Navigate to the **output directory of the Specflow project** and run the 
+  LivingDoc CLI by using the below command to generate the HTML report:
+  `livingdoc test-assembly SpecFlowCalculator.Specs.dll -t TestExecution.json`.
+  For example, say this solution was located at `C:\sources` the output directory 
+  would be at `C:\sources\acceptancetests-showcase\SuperCoolStore.Specs\bin\Debug\net5.0`
+  
+
+- Open the generated HTML file with any browser of your preference, the file is
+  located on the same folder as the **output directory of the Specflow project**. 
+
+To learn more about living documentation, please visit [this link](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/index.html)
